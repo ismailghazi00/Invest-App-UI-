@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invest_aap_bnq_ismail/screens/profile_screen.dart';
 
 import 'home_screen.dart';
 
@@ -14,7 +15,7 @@ const List<Widget> _allScreens = [
   HomeScreen(),
   Text('Product'),
   Text('Transaction'),
-  Text('Account'),
+  ProfileScreen()
 ];
 
 class _MainScreenState extends State<MainScreen> {

@@ -18,8 +18,16 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            IconButton(
-                onPressed: () {}, icon: Image.asset("assets/menuicon.png")),
+            Row(
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: Image.asset("assets/menuicon.png")),
+                const Spacer(),
+                IconButton(
+                    onPressed: () {},
+                    icon: Image.asset("assets/notification.png"))
+              ],
+            ),
             Text(
               "Welcome, Jessie",
               style: Theme.of(context).textTheme.bodyLarge,
