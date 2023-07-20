@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:invest_aap_bnq_ismail/screens/sign_in_screen.dart';
 import 'package:invest_aap_bnq_ismail/screens/signup_screen.dart';
 
-class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({super.key});
+import 'home_screen.dart';
+import 'main_screen.dart';
 
-  @override
-  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
-}
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +28,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
             ),
           ),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 32),
             child: Text(
@@ -52,52 +50,39 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             child: TextField(
                 style: Theme.of(context).textTheme.bodyMedium,
                 cursorColor: const Color(0xff828282),
-                decoration: textFieldDecoration('Full Name')),
+                decoration: textFieldDecoration('User Name')),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 32),
             child: TextField(
                 style: Theme.of(context).textTheme.bodyMedium,
                 cursorColor: const Color(0xff828282),
-                decoration: textFieldDecoration('Email Address')),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 32),
-            child: TextField(
-                style: Theme.of(context).textTheme.bodyMedium,
-                cursorColor: const Color(0xff828282),
+                obscureText: true,
                 decoration: textFieldDecoration('Password')),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 32),
             child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainScreen()));
+                },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xff31A062),
                     fixedSize: const Size(354, 60),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15))),
                 child: Text(
-                  "Create account",
+                  "Log in",
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium
                       ?.copyWith(color: Colors.white),
                 )),
           ),
-          const SizedBox(height: 20),
-          TextButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SignInScreen()));
-              },
-              child: Text("Already have an account",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium
-                      ?.copyWith(color: const Color(0xff31A062)))),
+          const Spacer()
         ],
       ),
     );
@@ -106,10 +91,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   InputDecoration textFieldDecoration(String hintText) {
     return InputDecoration(
       hintText: hintText,
-      hintStyle: Theme.of(context)
-          .textTheme
-          .bodyMedium
-          ?.copyWith(fontWeight: FontWeight.w400),
+      hintStyle: const TextStyle(
+          fontSize: 18,
+          color: Color(0xff4F4F4F),
+          fontFamily: '.SF UI Text',
+          fontWeight: FontWeight.w600),
       border: const OutlineInputBorder(),
       enabledBorder: const OutlineInputBorder(
         borderRadius: BorderRadius.all(Radius.circular(20)),

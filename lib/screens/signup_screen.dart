@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:invest_aap_bnq_ismail/screens/sign_in_screen.dart';
 
 import 'create_account_screen.dart';
+import 'home_screen.dart';
 import 'main_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -59,7 +61,7 @@ class SignUpScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MainScreen()));
+                          builder: (context) => const SignInScreen()));
                 },
                 child: Text("Login",
                     style: Theme.of(context)

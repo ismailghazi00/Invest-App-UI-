@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:invest_aap_bnq_ismail/screens/produc_screen.dart';
 import 'package:invest_aap_bnq_ismail/screens/profile_screen.dart';
 
+import 'bank_info_screen.dart';
 import 'home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -10,11 +12,11 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-int slectedIndex = 2;
+int slectedIndex = 0;
 const List<Widget> _allScreens = [
   HomeScreen(),
-  Text('Product'),
-  Text('Transaction'),
+  ProductScreen(),
+  BankInfoScreen(),
   ProfileScreen()
 ];
 

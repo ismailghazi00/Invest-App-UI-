@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_screen.dart';
+import 'package:invest_aap_bnq_ismail/widget/profile_page_tiles_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -11,53 +10,48 @@ class ProfileScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Align(
-            alignment: Alignment.bottomLeft,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 32, top: 50, bottom: 10),
-              child: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeScreen()));
-                },
-                icon: const Icon(Icons.arrow_back_ios),
-                iconSize: 20,
-              ),
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.arrow_back_ios),
+                  iconSize: 20,
+                ),
+                const Spacer()
+              ],
             ),
-          ),
-            SizedBox(
-              height: 60,
-              child: ListTile(
-                  onTap: () {},
-                  title: Text(
-                    "Profile",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(fontSize: 18),
-                  ),
-                  leading: const Icon(Icons.person),
-                  trailing: const Icon(Icons.arrow_forward_ios),
-                  tileColor: Colors.white),
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                Text(
+                  "Profile",
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                const Spacer()
+              ],
             ),
-                        SizedBox(
-              height: 60,
-              child: ListTile(
-                  onTap: () {},
-                  title: Text(
-                    "Profile",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(fontSize: 18),
-                  ),
-                  leading: const Icon(Icons.person),
-                  trailing: const Icon(Icons.arrow_forward_ios),
-                  tileColor: Colors.white),
-            ),
+            const SizedBox(height: 25),
+            const CircleAvatar(
+                radius: 82,
+                backgroundColor: Color(0xff31A078),
+                foregroundImage:
+                    AssetImage("assets/profile_pag_icons/Profilepicture.png")),
+            const SizedBox(height: 20),
+            Text("Jonas Macroni",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(fontSize: 22)),
+            Text("Expert",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(color: Colors.black)),
+            const SizedBox(height: 20),
+            const ProfilePageTiles()
           ],
         ),
       ),
